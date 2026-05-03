@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ListViewandIntentTask</string>
+    <string name="android_1.0_desc">Anroid 1.0 was Google\'s first Android \nrelease. Web browser support, camera \nsupport, Gmail counts,
+    Google maps, and a Youtube application were among the basic \ncapabilities. Although it does not have \an official name like the other introduced \nvariations, it is known informally as Apple
+        \nPie. In Android 1.0, the API level is set to 1. \nIt is no longer utilized in mobile devices. It \nwas published on September 23, 2008.</string>
 </resources>
