@@ -38,13 +38,38 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        init();
+        showMoreInfo();
+
+    }
+    public void init(){
         androidVersionLV = findViewById(R.id.androidVersions);
         androidList.add(new AndroidVersionInfo(androidVersions[0], getString(R.string.android_1_desc), R.drawable.android1));
+        androidList.add(new AndroidVersionInfo(androidVersions[1], getString(R.string.android_101_desc), R.drawable.android));
+        androidList.add(new AndroidVersionInfo(androidVersions[2], getString(R.string.Cupcake_desc), R.drawable.cupcake));
+        androidList.add(new AndroidVersionInfo(androidVersions[3], getString(R.string.Donut_desc), R.drawable.donut));
+        androidList.add(new AndroidVersionInfo(androidVersions[4], getString(R.string.Eclair_desc), R.drawable.eclair));
+        androidList.add(new AndroidVersionInfo(androidVersions[5], getString(R.string.Froyo_desc), R.drawable.froyo));
+        androidList.add(new AndroidVersionInfo(androidVersions[6], getString(R.string.Gingerbread_desc), R.drawable.gingerbread));
+        androidList.add(new AndroidVersionInfo(androidVersions[7], getString(R.string.Honeycomb_desc), R.drawable.honeycomb));
+        androidList.add(new AndroidVersionInfo(androidVersions[8], getString(R.string.Ice_Cream_Sandwich_desc), R.drawable.icecream));
+        androidList.add(new AndroidVersionInfo(androidVersions[9], getString(R.string.Jelly_Bean_desc), R.drawable.jellybean));
+        androidList.add(new AndroidVersionInfo(androidVersions[10], getString(R.string.Kitkat_desc), R.drawable.kitkat));
+        androidList.add(new AndroidVersionInfo(androidVersions[11], getString(R.string.Lollipop_desc), R.drawable.lolipop));
+        androidList.add(new AndroidVersionInfo(androidVersions[12], getString(R.string.Marshmallow_desc), R.drawable.marshmallow));
+        androidList.add(new AndroidVersionInfo(androidVersions[13], getString(R.string.Nougat_desc), R.drawable.nougat));
+        androidList.add(new AndroidVersionInfo(androidVersions[14], getString(R.string.Oreo_desc), R.drawable.oreo));
+        androidList.add(new AndroidVersionInfo(androidVersions[15], getString(R.string.Pie_desc), R.drawable.pie));
+        androidList.add(new AndroidVersionInfo(androidVersions[16], getString(R.string.Android_10_desc), R.drawable.android10));
+        androidList.add(new AndroidVersionInfo(androidVersions[17], getString(R.string.Android_11_desc), R.drawable.android11));
+        androidList.add(new AndroidVersionInfo(androidVersions[18], getString(R.string.Android_12_desc), R.drawable.android12));
+
 
 
         androidAdapter = new CustomAdapter(this,androidList);
         androidVersionLV.setAdapter(androidAdapter);
-        showMoreInfo();
+        intent = new Intent(this, SelectedAndroidInfo.class);
+
     }
     public void showMoreInfo(){
         androidVersionLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -57,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 String description = selectedVersion.getDescription();
                 int imageID = selectedVersion.getImageResourceId();
 
-                intent = new Intent(this, MainActivity2.class);
+
                 intent.putExtra("version_name", versionName);
                 intent.putExtra("description", description);
                 intent.putExtra("version_image", imageID);
